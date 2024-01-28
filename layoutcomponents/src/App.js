@@ -36,13 +36,11 @@ function App() {
           sourceName={"author"}
           ItemComponent={LargeAuthorListItem}
         />
-
         <RegularList
           items={books}
           sourceName={"book"}
           ItemComponent={SmallBookListItem}
         />
-
         <NumberedList
           items={books}
           sourceName={"book"}
