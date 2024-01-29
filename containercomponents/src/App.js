@@ -1,13 +1,19 @@
-import { Modal } from "./components/Modal";
-import { LargeBookListItem } from "./components/books/LargeListItems";
-import { books } from "./data/books";
+import axios from "axios";
+import { DataSourceWithRenderProps } from "./components/data-source-with-render-props";
+import { UserInfo } from "./components/user-info";
+
+const fetchData = async (url) => {
+  const response = await axios.get(url);
+  return response.data;
+};
 
 function App() {
   return (
     <>
-      <Modal>
-        <LargeBookListItem book={books[0]} />
-      </Modal>
+      <DataSourceWithRenderProps
+        getData={() => fetchData("/users/1")}
+        render={(resource) => <UserInfo user={resource} />}
+      ></DataSourceWithRenderProps>
     </>
   );
 }

@@ -18,7 +18,7 @@ const ModalContent = styled.div`
   width: 50%;
 `;
 
-export const Modal = ({ children }) => {
+export const UncontrolledModal = ({ children }) => {
   const [show, setShow] = useState(false);
 
   return (
